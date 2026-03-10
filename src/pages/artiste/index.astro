@@ -1,0 +1,147 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Logo from "../../assets/icons/logofooter-orange.svg";
+import Vagues from "../../assets/icons/vagues.svg";
+import ArtisteCard from "../../components/ArtisteCard.astro";
+import { getArtistes } from "../../../backend/backend.mjs";
+
+const artistes = await getArtistes();
+
+const artistes6Juin = artistes.filter((artiste) => artiste.date?.slice(8, 10) === "06");
+const artistes7Juin = artistes.filter((artiste) => artiste.date?.slice(8, 10) === "07");
+---
+
+<Layout title="Artistes">
+  <section class="pb-20 pt-16 text-center">
+    <div class="bg-orange pt-6">
+      <Image src={Vagues} alt="" class="block w-full" />
+    </div>
+
+    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange">
+      Artistes
+    </h1>
+
+    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold">
+      <a href="/">Accueil</a>
+      <span class="text-orange">›</span>
+      <span class="text-orange">Artistes</span>
+    </div>
+
+    <div class="mt-5 flex justify-center">
+      <Image src={Logo} alt="" class="h-52 w-auto" />
+    </div>
+
+    <div class="text-center">
+      <p class="px-15 text-xl leading-relaxed">
+        Découvrez les artistes qui rythmeront le Flying Tap Fest.
+      </p>
+    </div>
+
+    <div class="mt-16 flex justify-center gap-10 text-3xl font-bold uppercase">
+      <button
+        id="tab-tout"
+        type="button"
+        class="tab-btn border-b-4 border-orange pb-2 text-orange"
+        data-target="section-tout"
+      >
+        Tout
+      </button>
+
+      <button
+        id="tab-6juin"
+        type="button"
+        class="tab-btn pb-2 text-gray-400"
+        data-target="section-6juin"
+      >
+        6 juin
+      </button>
+
+      <button
+        id="tab-7juin"
+        type="button"
+        class="tab-btn pb-2 text-gray-400"
+        data-target="section-7juin"
+      >
+        7 juin
+      </button>
+    </div>
+
+    <div id="section-tout" class="artist-section mt-16">
+      <div class="space-y-12">
+        {artistes.map((artiste) => (
+          <ArtisteCard artiste={artiste} />
+        ))}
+      </div>
+    </div>
+
+    <div id="section-6juin" class="artist-section mt-16 hidden">
+      <div class="space-y-12">
+        {artistes6Juin.map((artiste) => (
+          <ArtisteCard artiste={artiste} />
+        ))}
+      </div>
+    </div>
+
+    <div id="section-7juin" class="artist-section mt-16 hidden">
+      <div class="space-y-12">
+        {artistes7Juin.map((artiste) => (
+          <ArtisteCard artiste={artiste} />
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <div class="flex justify-center">
+        <Image
+          src={Logo}
+          alt="Flying Tap Fest"
+          class="h-auto w-auto"
+        />
+      </div>
+
+      <p class="mt-6 px-10 text-3xl font-bold uppercase text-orange">
+        Tout ce qu'il faut savoir pour venir.
+      </p>
+
+      <a
+        href="/infos"
+        class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-lg font-bold uppercase text-white"
+      >
+        Voir les infos
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<script is:inline>
+  // @ts-nocheck
+  const tabs = document.querySelectorAll(".tab-btn");
+  const sections = document.querySelectorAll(".artist-section");
+
+  function activateTab(targetId) {
+    sections.forEach((section) => {
+      if (section.id === targetId) {
+        section.classList.remove("hidden");
+      } else {
+        section.classList.add("hidden");
+      }
+    });
+
+    tabs.forEach((tab) => {
+      if (tab.dataset.target === targetId) {
+        tab.classList.add("border-b-4", "border-orange", "text-orange");
+        tab.classList.remove("text-gray-400");
+      } else {
+        tab.classList.remove("border-b-4", "border-orange", "text-orange");
+        tab.classList.add("text-gray-400");
+      }
+    });
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      activateTab(tab.dataset.target);
+    });
+  });
+</script>

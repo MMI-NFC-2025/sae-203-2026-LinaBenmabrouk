@@ -1,0 +1,302 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Logo from "../assets/icons/logofooter-orange.svg";
+import Vagues from "../assets/icons/vagues.svg";
+import IconTicket from "../assets/icons/ticket.svg";
+import IconMaison from "../assets/icons/maison.svg";
+import IconBus from "../assets/icons/bus.svg";
+---
+
+<Layout title="Infos pratiques">
+  <section class="pb-20 pt-16 text-center">
+
+    <div class="bg-orange pt-6">
+      <Image src={Vagues} alt="" class="block w-full" />
+    </div>
+
+    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange">
+      Infos pratiques
+    </h1>
+
+    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold">
+      <a href="/">Accueil</a>
+      <span class="text-orange">›</span>
+      <span class="text-orange">Infos pratiques</span>
+    </div>
+
+    <div class="mt-5 flex justify-center">
+      <Image src={Logo} alt="" class="h-52 w-auto" />
+    </div>
+
+    <div class="text-center">
+      <p class="px-15 text-xl leading-relaxed">
+        Tout ce qu’il faut pour préparer votre visite.
+      </p>
+    </div>
+
+    <div class="mt-20 px-5">
+      <div class="flex flex-col items-center text-center">
+        <Image src={IconTicket} alt="" class="h-20 w-auto" />
+
+        <h2 class="mt-4 text-3xl font-bold uppercase text-orange">
+          Tarifs
+        </h2>
+
+        <p class="mt-2 text-sm leading-relaxed">
+          Choisissez la formule qui vous convient pour profiter du festival.
+        </p>
+      </div>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-8">
+
+        <div class="w-96 rounded-2xl border border-orange/20 bg-beige/40 p-8 text-center shadow-sm">
+
+          <h3 class="mt-2 text-2xl font-bold text-orange">
+            Pass 1 jour
+          </h3>
+
+          <p class="mt-4 text-left">
+            Accès au festival pendant une journée complète avec
+          </p>
+
+          <ul class="mx-auto mt-4 w-fit list-disc text-left text-sm leading-relaxed">
+            <li>Spectacles</li>
+            <li>Performances de claquettes</li>
+            <li>Musique live et show de drones lumineux</li>
+          </ul>
+
+          <p class="mt-6 text-5xl font-bold text-black">
+            18€
+          </p>
+
+          <a
+            href="#"
+            class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-sm font-bold uppercase text-white"
+          >
+            Acheter
+          </a>
+
+        </div>
+
+        <div class="relative w-96 rounded-2xl border border-orange bg-beige/40 p-8 text-center shadow-sm">
+
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-orange px-4 py-1 text-xs font-bold uppercase text-white">
+            Le plus populaire
+          </div>
+
+          <h3 class="mt-2 text-2xl font-bold text-orange">
+            Pass 2 jours
+          </h3>
+
+          <p class="mt-4 text-left">
+            Accès complet aux deux jours du festival
+          </p>
+
+          <ul class="mx-auto mt-4 w-fit list-disc text-left text-sm leading-relaxed">
+            <li>Tous les spectacles et performances</li>
+            <li>Ateliers et concerts</li>
+            <li>Show de drones lumineux</li>
+          </ul>
+
+          <p class="mt-6 text-5xl font-bold text-black">
+            30€
+          </p>
+
+          <a
+            href="#"
+            class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-sm font-bold uppercase text-white"
+          >
+            Acheter
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mt-20 px-5">
+
+      <div class="flex flex-col items-center text-center">
+        <Image src={IconMaison} alt="" class="h-20 w-auto" />
+
+        <h2 class="mt-4 text-3xl font-bold uppercase text-orange">
+          Hébergements
+        </h2>
+
+        <p class="mt-2 text-sm leading-relaxed">
+          Plusieurs options d’hébergement sont disponibles à proximité du parc.
+        </p>
+      </div>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-8">
+
+        <div class="w-96 rounded-2xl bg-orange p-8 text-center text-white shadow-sm">
+
+          <h3 class="text-xl font-bold uppercase">
+            Camping municipal
+          </h3>
+
+          <p class="mt-4 text-base leading-relaxed">
+            À 10 minutes à pied du festival, idéal pour vivre l’expérience sur place.
+          </p>
+
+        </div>
+
+        <div class="w-96 rounded-2xl bg-orange p-8 text-center text-white shadow-sm">
+
+          <h3 class="text-xl font-bold uppercase">
+            Hôtels partenaires
+          </h3>
+
+          <p class="mt-4 text-base leading-relaxed">
+            Du 2★ au 4★, avec offres spéciales festival sur présentation de votre billet.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mt-20 px-5">
+
+      <div class="flex flex-col items-center text-center">
+        <Image src={IconBus} alt="" class="h-20 w-auto" />
+
+        <h2 class="mt-4 text-3xl font-bold uppercase text-orange">
+          Transport
+        </h2>
+
+        <p class="mt-2 text-sm leading-relaxed">
+          Plusieurs options de transport permettent de rejoindre facilement le festival.
+        </p>
+      </div>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-8">
+
+        <div class="w-96 rounded-2xl border border-orange/20 bg-beige/40 p-8 text-center shadow-sm">
+
+          <h3 class="text-xl font-bold uppercase">
+            Train
+          </h3>
+
+          <p class="mt-4 text-base leading-relaxed">
+            Gare de Montbéliard à 15 minutes à pied du site du festival.
+          </p>
+
+        </div>
+
+        <div class="w-96 rounded-2xl border border-orange/20 bg-beige/40 p-8 text-center shadow-sm">
+
+          <h3 class="text-xl font-bold uppercase">
+            Bus
+          </h3>
+
+          <p class="mt-4 text-base leading-relaxed">
+            Lignes 1 et 3, arrêt “Parc” à proximité immédiate de l’entrée.
+          </p>
+
+        </div>
+
+        <div class="w-96 rounded-2xl border border-orange/20 bg-beige/40 p-8 text-center shadow-sm">
+
+          <h3 class="text-xl font-bold uppercase">
+            Voiture
+          </h3>
+
+          <p class="mt-4 text-base leading-relaxed">
+            Parking gratuit sur place, dans la limite des places disponibles.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mt-20 px-5">
+
+      <div class="flex flex-col items-center text-center">
+        <h2 class="mt-4 text-3xl font-bold uppercase text-orange">
+          Faq
+        </h2>
+      </div>
+
+      <div id="faq" class="mx-auto mt-10 max-w-5xl px-5">
+
+        <div class="border-b border-blue/20">
+
+          <button class="flex w-full items-center justify-between py-5 text-left" type="button" aria-expanded="false">
+            <span class="text-sm font-bold">
+              Les ateliers sont-ils ouvert à tous ?
+            </span>
+            <span class="faq-icon text-2xl font-bold text-orange">+</span>
+          </button>
+
+          <div class="faq-content hidden pb-5 text-left text-base leading-relaxed">
+            Oui, les ateliers sont ouverts à tous les festivaliers, dans la limite des places disponibles. Certains ateliers peuvent nécessiter une inscription sur place.
+          </div>
+
+        </div>
+
+        <div class="border-b border-blue/20">
+
+          <button class="flex w-full items-center justify-between py-5 text-left" type="button" aria-expanded="false">
+            <span class="text-sm font-bold">
+              Le spectacle de drones est-il inclus dans le billet ?
+            </span>
+            <span class="faq-icon text-2xl font-bold text-orange">+</span>
+          </button>
+
+          <div class="faq-content hidden pb-5 text-left text-base leading-relaxed">
+            Oui, le spectacle de drones est inclus dans tous les pass du festival.
+          </div>
+
+        </div>
+
+        <div class="border-b border-blue/20">
+
+          <button class="flex w-full items-center justify-between py-5 text-left" type="button" aria-expanded="false">
+            <span class="text-sm font-bold">
+              Peut-on venir avec des enfants ?
+            </span>
+            <span class="faq-icon text-2xl font-bold text-orange">+</span>
+          </button>
+
+          <div class="faq-content hidden pb-5 text-left text-base leading-relaxed">
+            Bien sûr, le festival est ouvert aux familles.
+          </div>
+
+        </div>
+
+        <div class="border-b border-blue/20">
+
+          <button class="flex w-full items-center justify-between py-5 text-left" type="button" aria-expanded="false">
+            <span class="text-sm font-bold">
+              Le festival est-il accessible PMR ?
+            </span>
+            <span class="faq-icon text-2xl font-bold text-orange">+</span>
+          </button>
+
+          <div class="faq-content hidden pb-5 text-left text-base leading-relaxed">
+            Oui, le site dispose de zones dédiées et d’allées adaptées.
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 flex flex-col items-center text-center">
+
+        <Image
+          src={Logo}
+          alt="Flying Tap Fest"
+          class="h-30 w-auto"
+        />
+
+        <p class="mt-4 px-5 text-base leading-relaxed">
+          Entre ciel et terre, vivez l’expérience Flying Tap Fest.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script src="../js/faq.js"></script>

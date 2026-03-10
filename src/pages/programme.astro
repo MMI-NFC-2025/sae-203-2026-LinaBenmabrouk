@@ -1,0 +1,229 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Logo from "../assets/icons/logofooter-orange.svg";
+import Vagues from "../assets/icons/vagues.svg";
+import ArtisteCard from "../components/ArtisteCard.astro";
+import { getArtistes } from "../../backend/backend.mjs";
+
+const artistes = await getArtistes();
+
+function getLieuName(record: any) {
+  const value = record.expand?.lieu;
+
+  if (!value) return "";
+
+  if (Array.isArray(value)) {
+    return value.at(0)?.nom || "";
+  }
+
+  return value.nom || "";
+}
+
+const genres = [
+  ...new Set(
+    artistes
+      .map((artiste) => artiste.genre)
+      .filter(Boolean)
+  )
+];
+
+const horaires = [
+  ...new Set(
+    artistes
+      .map((artiste) => artiste.date?.slice(11, 16))
+      .filter(Boolean)
+  )
+];
+
+const scenes = [
+  ...new Set(
+    artistes
+      .map((artiste) => getLieuName(artiste))
+      .filter(Boolean)
+  )
+];
+---
+
+<Layout title="Programme">
+  <section class="pb-20 pt-16 text-center">
+    <div class="bg-orange pt-6">
+      <Image
+        src={Vagues}
+        alt=""
+        class="block w-full"
+      />
+    </div>
+
+    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange">
+      Programme
+    </h1>
+
+    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold">
+      <a href="/">Accueil</a>
+      <span class="text-orange">›</span>
+      <span class="text-orange">Programme</span>
+    </div>
+
+    <div class="mt-5 flex justify-center">
+      <Image
+        src={Logo}
+        alt=""
+        class="h-52 w-auto"
+      />
+    </div>
+
+    <div class="text-center">
+      <p class="px-15 text-xl leading-relaxed">
+        Découvrez les performances qui rythmeront le Flying Tap Fest.
+      </p>
+    </div>
+
+    <div class="mt-10 px-5">
+      <div class="mx-auto max-w-5xl rounded-lg border border-orange/20 bg-beige/40 p-6 shadow-sm">
+        <div class="flex flex-col gap-4 lg:flex-row lg:items-end">
+          <div class="w-full lg:flex-1">
+            <label for="search-programme" class="mb-2 block text-left text-sm font-bold uppercase text-orange">
+              Recherche
+            </label>
+
+            <input
+              id="search-programme"
+              type="text"
+              placeholder="Rechercher un artiste"
+              class="w-full rounded-lg bg-orange px-4 py-3 text-sm text-beige placeholder-beige outline-none"
+            />
+          </div>
+
+          <div class="w-full lg:w-52">
+            <label for="filter-genre" class="mb-2 block text-left text-sm font-bold uppercase text-orange">
+              Genre
+            </label>
+
+            <select
+              id="filter-genre"
+              class="w-full rounded-lg bg-orange px-4 py-3 text-sm text-beige outline-none"
+            >
+              <option value="">Tous</option>
+              {genres.map((genre) => (
+                <option value={genre}>{genre}</option>
+              ))}
+            </select>
+          </div>
+
+          <div class="w-full lg:w-52">
+            <label for="filter-horaire" class="mb-2 block text-left text-sm font-bold uppercase text-orange">
+              Horaire
+            </label>
+
+            <select
+              id="filter-horaire"
+              class="w-full rounded-lg bg-orange px-4 py-3 text-sm text-beige outline-none"
+            >
+              <option value="">Tous</option>
+              {horaires.map((horaire) => (
+                <option value={horaire}>{horaire}</option>
+              ))}
+            </select>
+          </div>
+
+          <div class="w-full lg:w-52">
+            <label for="filter-scene" class="mb-2 block text-left text-sm font-bold uppercase text-orange">
+              Scène
+            </label>
+
+            <select
+              id="filter-scene"
+              class="w-full rounded-lg bg-orange px-4 py-3 text-sm text-beige outline-none"
+            >
+              <option value="">Toutes</option>
+              {scenes.map((scene) => (
+                <option value={scene}>{scene}</option>
+              ))}
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="programme-list" class="mt-10 space-y-10">
+      {artistes.map((artiste) => {
+        const scene = getLieuName(artiste);
+        const genre = artiste.genre || "";
+        const horaire = artiste.date?.slice(11, 16) || "";
+
+        return (
+          <div
+            class="programme-item"
+            data-name={(artiste.nom || "").toLowerCase()}
+            data-genre={genre.toLowerCase()}
+            data-horaire={horaire}
+            data-scene={scene.toLowerCase()}
+          >
+            <ArtisteCard artiste={artiste} />
+          </div>
+        );
+      })}
+    </div>
+
+    <div class="mt-12 text-center">
+      <div class="flex justify-center">
+        <Image
+          src={Logo}
+          alt="Flying Tap Fest"
+          class="h-auto w-auto"
+        />
+      </div>
+
+      <p class="mt-6 px-10 text-3xl font-bold uppercase text-orange">
+        Le programme complet ici !
+      </p>
+
+      <a
+        href="/programme-flying-tap-fest-2026.pdf"
+        download="programme-flying-tap-fest-2026.pdf"
+        class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-lg font-bold uppercase text-white"
+      >
+        Télécharger le programme
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<script is:inline>
+  // @ts-nocheck
+  const searchInput = document.getElementById("search-programme");
+  const genreSelect = document.getElementById("filter-genre");
+  const horaireSelect = document.getElementById("filter-horaire");
+  const sceneSelect = document.getElementById("filter-scene");
+  const items = document.querySelectorAll(".programme-item");
+
+  function filterProgramme() {
+    const searchValue = (searchInput?.value || "").trim().toLowerCase();
+    const genreValue = (genreSelect?.value || "").trim().toLowerCase();
+    const horaireValue = (horaireSelect?.value || "").trim();
+    const sceneValue = (sceneSelect?.value || "").trim().toLowerCase();
+
+    items.forEach(function (item) {
+      const name = item.getAttribute("data-name") || "";
+      const genre = item.getAttribute("data-genre") || "";
+      const horaire = item.getAttribute("data-horaire") || "";
+      const scene = item.getAttribute("data-scene") || "";
+
+      const matchSearch = !searchValue || name.includes(searchValue);
+      const matchGenre = !genreValue || genre === genreValue;
+      const matchHoraire = !horaireValue || horaire === horaireValue;
+      const matchScene = !sceneValue || scene === sceneValue;
+
+      item.style.display =
+        matchSearch && matchGenre && matchHoraire && matchScene
+          ? ""
+          : "none";
+    });
+  }
+
+  if (searchInput) searchInput.addEventListener("input", filterProgramme);
+  if (genreSelect) genreSelect.addEventListener("change", filterProgramme);
+  if (horaireSelect) horaireSelect.addEventListener("change", filterProgramme);
+  if (sceneSelect) sceneSelect.addEventListener("change", filterProgramme);
+</script>

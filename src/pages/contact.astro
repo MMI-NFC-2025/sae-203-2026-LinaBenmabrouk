@@ -1,0 +1,212 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Logo from "../assets/icons/logofooter-orange.svg";
+import Vagues from "../assets/icons/vagues.svg";
+import IconMail from "../assets/icons/mail.svg";
+import IconMap from "../assets/icons/location.svg";
+import IconPhone from "../assets/icons/call.svg";
+import IconInstagram from "../assets/icons/instagram.svg";
+import IconFacebook from "../assets/icons/facebook.svg";
+---
+
+<Layout title="Contact">
+  <section class="pb-20 pt-16 text-center">
+
+    <div class="bg-orange pt-6">
+      <Image src={Vagues} alt="" class="block w-full" />
+    </div>
+
+    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange">
+      Contact
+    </h1>
+
+    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold">
+      <a href="/">Accueil</a>
+      <span class="text-orange">›</span>
+      <span class="text-orange">Contact</span>
+    </div>
+
+    <div class="mt-5 flex justify-center">
+      <Image src={Logo} alt="" class="h-52 w-auto" />
+    </div>
+
+    <div class="text-center">
+      <p class="px-15 text-xl leading-relaxed">
+        Une question, une demande ou besoin d’informations ? Notre équipe vous répond au plus vite.
+      </p>
+    </div>
+
+    <div class="mt-10 px-5">
+      <div class="mx-auto mt-10 max-w-3xl p-8 text-left">
+        <form class="space-y-6" method="POST" action="#">
+          <div class="grid gap-6 md:grid-cols-2">
+
+            <div>
+              <label for="nom" class="mb-2 block text-sm font-bold uppercase text-orange">
+                Nom *
+              </label>
+
+              <input
+                id="nom"
+                name="nom"
+                type="text"
+                class="w-full rounded-lg bg-orange px-4 py-3 text-sm text-beige placeholder-beige outline-none"
+                placeholder="Votre nom"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="email" class="mb-2 block text-sm font-bold uppercase text-orange">
+                Email *
+              </label>
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                class="w-full rounded-lg bg-orange px-4 py-3 text-sm text-beige placeholder-beige outline-none"
+                placeholder="votre@email.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="sujet" class="mb-2 block text-sm font-bold uppercase text-orange">
+              Sujet *
+            </label>
+
+            <select
+              id="sujet"
+              name="sujet"
+              class="w-full rounded-lg bg-orange px-4 py-3 text-sm text-beige outline-none"
+              required
+            >
+              <option value="" disabled selected>
+                Choisissez un sujet
+              </option>
+
+              <option value="information">
+                Demande d'information
+              </option>
+
+              <option value="billetterie">
+                Question sur la billetterie
+              </option>
+
+              <option value="partenariat">
+                Partenariat / presse
+              </option>
+
+              <option value="autre">
+                Autre demande
+              </option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="mb-2 block text-sm font-bold uppercase text-orange">
+              Message *
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              class="w-full rounded-lg bg-orange px-4 py-3 text-sm text-beige placeholder-beige outline-none"
+              placeholder="Écrivez votre message ici..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              class="inline-flex items-center justify-center rounded-lg bg-orange px-8 py-3 text-sm font-bold uppercase text-white"
+            >
+              Envoyer
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="mt-20 px-5">
+
+      <h2 class="text-3xl font-bold uppercase text-orange">
+        Informations de contact
+      </h2>
+
+      <div class="mx-auto mt-10 max-w-xl space-y-6 text-center">
+        <div class="flex items-center justify-center gap-4">
+          <Image src={IconMail} alt="" class="h-6 w-6" />
+          <p class="text-base font-semibold">
+            contact@flyingtapfest.fr
+          </p>
+        </div>
+
+        <div class="flex items-center justify-center gap-4">
+          <Image src={IconMap} alt="" class="h-6 w-6" />
+          <p class="text-base font-semibold">
+            Parc du Près-la-Rose<br />
+            25200 Montbéliard, France
+          </p>
+        </div>
+
+        <div class="flex items-center justify-center gap-4">
+          <Image src={IconPhone} alt="" class="h-6 w-6" />
+          <p class="text-base font-semibold">
+            +33 3 84 00 00 00
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-20 flex flex-col items-center text-center">
+
+      <Image
+        src={Logo}
+        alt="Flying Tap Fest"
+        class="h-20 w-auto"
+      />
+
+      <h2 class="mt-15 text-3xl font-bold uppercase text-orange">
+        Réseaux sociaux
+      </h2>
+
+      <div class="mt-4 flex items-center justify-center gap-10">
+        <a
+          href="https://www.iut-nfc.univ-fcomte.fr/b-u-t-metiers-du-multimedia-et-de-linternet/"
+          target="_blank"
+          rel="noopener"
+        >
+          <Image
+            src={IconInstagram}
+            alt="Instagram"
+            class="h-10 w-auto"
+          />
+        </a>
+
+        <a
+          href="https://www.iut-nfc.univ-fcomte.fr/b-u-t-metiers-du-multimedia-et-de-linternet/"
+          target="_blank"
+          rel="noopener"
+        >
+          <Image
+            src={IconFacebook}
+            alt="Facebook"
+            class="h-10 w-auto"
+          />
+        </a>
+      </div>
+
+      <p class="mt-6 text-base">
+        Au plaisir d’échanger avec vous.
+      </p>
+
+    </div>
+
+  </section>
+</Layout>

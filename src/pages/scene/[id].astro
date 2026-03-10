@@ -1,0 +1,95 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Logo from "../../assets/icons/logofooter-orange.svg";
+import Vagues from "../../assets/icons/vagues.svg";
+import PbImage from "../../components/PbImage.astro";
+import ArtisteCard from "../../components/ArtisteCard.astro";
+import { getSceneById, getArtistesBySceneId } from "../../../backend/backend.mjs";
+
+const { id } = Astro.params;
+
+const scene = await getSceneById(id);
+const artistes = await getArtistesBySceneId(id);
+---
+
+<Layout title={scene.nom}>
+  <section class="pb-20 pt-16 text-center">
+    <div class="bg-orange pt-6">
+      <Image
+        src={Vagues}
+        alt=""
+        class="block w-full"
+      />
+    </div>
+
+    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange">
+      {scene.nom}
+    </h1>
+
+    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold">
+      <a href="/">Accueil</a>
+      <span class="text-orange">›</span>
+      <a href="/scene">Scènes</a>
+      <span class="text-orange">›</span>
+      <span class="text-orange">{scene.nom}</span>
+    </div>
+
+    <div class="mt-5 flex justify-center">
+      <Image
+        src={Logo}
+        alt=""
+        class="h-52 w-auto"
+      />
+    </div>
+
+    <div class="mt-10 px-5">
+      <div class="mx-auto max-w-3xl">
+        <div class="overflow-hidden rounded-3xl">
+          <PbImage
+            record={scene}
+            imageField={scene.photo}
+            class="h-80 w-full object-cover"
+          />
+        </div>
+
+        <p class="mt-8 text-left text-xl leading-relaxed text-blue">
+          {scene.description}
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-20 px-5">
+      <h2 class="text-3xl font-bold uppercase text-orange">
+        Liste des artistes
+      </h2>
+
+      <div class="mt-12 space-y-12">
+        {artistes.map((artiste) => (
+          <ArtisteCard artiste={artiste} />
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <div class="flex justify-center">
+        <Image
+          src={Logo}
+          alt="Flying Tap Fest"
+          class="h-auto w-auto"
+        />
+      </div>
+
+      <p class="mt-6 px-10 text-3xl font-bold uppercase text-orange">
+        Tout ce qu'il faut savoir pour venir.
+      </p>
+
+      <a
+        href="/infos"
+        class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-lg font-bold uppercase text-white"
+      >
+        Voir les infos
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,64 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Logo from "../../assets/icons/logofooter-orange.svg";
+import Vagues from "../../assets/icons/vagues.svg";
+import SceneCard from "../../components/SceneCard.astro";
+import { getAllScenesByName } from "../../../backend/backend.mjs";
+
+const scenes = await getAllScenesByName();
+---
+
+<Layout title="Scènes">
+  <section class="pb-20 pt-16 text-center">
+    <div class="bg-orange pt-6">
+      <Image src={Vagues} alt="" class="block w-full" />
+    </div>
+
+    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange">
+      Scènes
+    </h1>
+
+    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold">
+      <a href="/">Accueil</a>
+      <span class="text-orange">›</span>
+      <span class="text-orange">Scènes</span>
+    </div>
+
+    <div class="mt-5 flex justify-center">
+      <Image src={Logo} alt="" class="h-52 w-auto" />
+    </div>
+
+    <div class="text-center">
+      <p class="px-15 text-xl leading-relaxed">
+        Découvrez les différents espaces du Flying Tap Fest.
+      </p>
+    </div>
+
+    <div class="mt-20 space-y-12">
+      {scenes.map(scene => (
+        <SceneCard scene={scene} />
+      ))}
+    </div>
+    <div class="mt-12 text-center">
+      <div class="flex justify-center">
+        <Image
+          src={Logo}
+          alt="Flying Tap Fest"
+          class="h-auto w-auto"
+        />
+      </div>
+
+      <p class="mt-6 px-10 text-3xl font-bold uppercase text-orange">
+        Prêt à découvrir ce qui vous attend ?
+      </p>
+
+      <a
+        href="/artiste"
+        class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-lg font-bold uppercase text-white"
+      >
+        Voir les artistes
+      </a>
+    </div>
+  </section>
+</Layout>

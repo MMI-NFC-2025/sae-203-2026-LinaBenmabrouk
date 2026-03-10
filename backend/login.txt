@@ -1,0 +1,10 @@
+Login : linabenmabrouk23@gmail.com
+Mot de passe : festivallina
+
+text-xs → 12px
+
+text-sm → 14px
+
+text-base → 16px
+
+réindente proprement le code

@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+  --font-barlow: 'Barlow', sans-serif;
+
+  --color-orange: oklch(0.6437 0.1722 33.88); /* #e25d40 */
+  --color-blue: oklch(0.3005 0.0585 258.6); /* #1b2e4b */
+  --color-beige: oklch(0.8995 0.015 80.7); /* #e3ddd3 */
+  --color-yellow: oklch(0.8515 0.1251 81.99); /* #f7c668 */
+  --color-yellow2: oklch(0.7692 0.1663 68.91); /* #f79d09 */
+}

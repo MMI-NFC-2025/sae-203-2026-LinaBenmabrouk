@@ -1,0 +1,77 @@
+---
+import Logo from "../assets/icons/logo.svg";
+import { Image } from "astro:assets";
+import MenuImage from "../assets/images/menu.webp";
+---
+
+<header
+  class="fixed z-30 flex w-full items-center justify-between bg-orange px-6 py-4 transition-all duration-300 ease-in-out"
+  id="header"
+>
+  <a href="/" aria-label="Accueil" class="block mt-3">
+    <Logo class="h-9 w-9" />
+  </a>
+
+  <div class="flex items-center">
+    <button
+      class="group relative z-40 flex h-6 w-6 flex-col items-center justify-center gap-1.5 md:hidden"
+      id="menu-btn"
+      aria-label="Menu"
+      aria-controls="menu"
+      aria-expanded="false"
+      type="button"
+    >
+      <span
+        class="block h-0.5 w-5 bg-beige transition-all duration-300 ease-in-out group-aria-expanded:translate-y-1 group-aria-expanded:rotate-45 group-aria-expanded:bg-orange"
+      ></span>
+
+      <span
+        class="block h-0.5 w-5 bg-beige transition-all duration-300 ease-in-out group-aria-expanded:-translate-y-1 group-aria-expanded:-rotate-45 group-aria-expanded:bg-orange"
+      ></span>
+    </button>
+
+    <nav
+      class="fixed inset-0 z-20 bg-beige opacity-100 transition-all duration-300 ease-in-out aria-hidden:invisible aria-hidden:opacity-0"
+      id="menu"
+      aria-hidden="true"
+    >
+      <div class="flex min-h-screen flex-col bg-beige px-6 pt-7 pb-0">
+
+        <div class="flex justify-between">
+          <a href="/" aria-label="Accueil" class="block">
+            <Logo class="h-9 w-9" />
+          </a>
+        </div>
+
+        <p class="mt-8 max-w-sm text-base leading-relaxed">
+          Naviguez entre les univers du Flying Tap Fest.
+        </p>
+
+        <ul class="mt-16 space-y-4 text-2xl font-bold text-orange">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/festival">Le festival</a></li>
+          <li><a href="/programme">Programme</a></li>
+          <li><a href="/artiste">Artistes</a></li>
+          <li><a href="/scene">Scènes</a></li>
+          <li><a href="/infos">Infos pratiques</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+
+        <div class="mt-10">
+          <Image
+            src={MenuImage}
+            alt="Flying Tap Fest"
+            class="block w-full rounded-xl object-cover"
+          />
+        </div>
+
+        <p class="mt-5 max-w-sm text-base font-semibold leading-relaxed">
+          Entre ciel et terre, vivez l’expérience Flying Tap Fest.
+        </p>
+
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script src="../js/header.js"></script>
