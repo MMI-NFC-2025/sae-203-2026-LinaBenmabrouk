@@ -1,22 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 import { Image } from "astro:assets";
-import Logo from "../assets/icons/logofooter-orange.svg";
-import Vagues from "../assets/icons/vagues.svg";
+import Logo from "../assets/icons/logo.svg";
 ---
 
-<Layout title="Page introuvable">
   <section class="min-h-screen pb-20 pt-16 text-center">
-
-    <div class="bg-orange pt-6">
-      <Image
-        src={Vagues}
-        alt=""
-        class="block w-full"
-      />
-    </div>
-
-    <h1 class="-mt-px bg-beige text-5xl font-bold text-orange">
+    <h1 class="-mt-px text-5xl font-bold text-orange">
       Erreur 404
     </h1>
 
@@ -29,13 +18,12 @@ import Vagues from "../assets/icons/vagues.svg";
     </div>
 
     <div class="mx-auto mt-10 max-w-3xl px-6">
-
       <p class="text-4xl font-bold uppercase text-orange">
         Page introuvable
       </p>
 
       <p class="mt-6 text-xl leading-relaxed text-blue">
-        Oups… cette page semble avoir quitté la scène.
+        Oups... La page que vous cherchez n'existe pas ou a est deplacer. Essayez de rechercher ce que vous cherchez ci-dessous ou retournez sur la page d'accueil.
       </p>
 
       <form id="search404" class="mt-10 flex justify-center">
@@ -46,11 +34,8 @@ import Vagues from "../assets/icons/vagues.svg";
           class="w-full max-w-xl rounded-lg border border-orange bg-beige px-6 py-4 text-lg text-blue placeholder-blue outline-none"
         />
       </form>
-
     </div>
-
   </section>
-</Layout>
 
 <script is:inline>
   const form = document.getElementById("search404");
