@@ -9,6 +9,7 @@ import { addArtiste } from './backend.mjs';
 import { updateArtiste } from './backend.mjs';
 import { addScene } from './backend.mjs';
 import { updateScene } from './backend.mjs';
+import { addNewUser, loginUser, getCurrentUser, isAuthValid, clearAuth } from './backend.mjs';
 
 /*
 try {
@@ -109,5 +110,34 @@ try {
     console.log(result);
 } catch (e) {
     console.error(e);
+}
+
+try {
+  const unique = Date.now();
+  const password = "Azerty123!";
+
+  const userData = {
+    email: `user${unique}@mmi.local`,
+    password,
+    passwordConfirm: password,
+    name: `User_${unique}`
+  };
+
+  const createdUser = await addNewUser(userData);
+  console.log("Utilisateur créé :", createdUser.id, createdUser.email);
+
+  clearAuth();
+  console.log("Auth valide avant connexion :", isAuthValid());
+
+  const authData = await loginUser(userData.email, password);
+  console.log("Connexion réussie :", authData.record.email);
+
+  console.log("Auth valide après connexion :", isAuthValid());
+  console.log("Utilisateur courant :", getCurrentUser());
+
+  clearAuth();
+  console.log("Auth valide après déconnexion :", isAuthValid());
+} catch (e) {
+  console.error("Erreur test user :", e.response?.message || e.message);
 }
 */

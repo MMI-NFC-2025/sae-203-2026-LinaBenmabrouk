@@ -81,3 +81,40 @@ export async function updateScene(id, data) {
     return await pb.collection('scene').update(id, data);
 }
 
+export function clearAuth() {
+  pb.authStore.clear();
+}
+
+export function isAuthValid() {
+  return pb.authStore.isValid;
+}
+
+export function getCurrentUser() {
+  return pb.authStore.record;
+}
+
+export async function loginUser(email, password) {
+  clearAuth();
+
+  try {
+    return await pb.collection("users").authWithPassword(email, password);
+  } catch (error) {
+    console.log("Erreur de connexion :", error.response?.message || error.message);
+    throw error;
+  }
+}
+
+export async function loginSuperUser(email, password) {
+  clearAuth();
+
+  try {
+    return await pb.collection('_superusers').authWithPassword(email, password);
+  } catch (error) {
+    console.log("Erreur de connexion super user :", error.response?.message || error.message);
+    throw error;
+  }
+}
+
+export async function addNewUser(data) {
+  return await pb.collection("users").create(data);
+}
