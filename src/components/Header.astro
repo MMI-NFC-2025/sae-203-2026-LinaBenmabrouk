@@ -5,16 +5,26 @@ import MenuImage from "../assets/images/menu.webp";
 ---
 
 <header
-  class="fixed z-30 flex w-full items-center justify-between bg-orange px-6 py-4 transition-all duration-300 ease-in-out"
+  class="fixed z-30 flex w-full items-center justify-between bg-orange px-6 py-4 transition-all duration-300 ease-in-out lg:px-10"
   id="header"
 >
-  <a href="/" aria-label="Accueil" class="block mt-3">
+  <a href="/" aria-label="Accueil" class="block mt-3 lg:mt-0">
     <Logo class="h-9 w-9" />
   </a>
 
   <div class="flex items-center">
+    <ul class="hidden lg:flex lg:items-center lg:gap-8 lg:text-beige lg:text-sm lg:font-semibold">
+      <li><a href="/" class="transition-opacity duration-200 hover:opacity-70">Accueil</a></li>
+      <li><a href="/festival" class="transition-opacity duration-200 hover:opacity-70">Le festival</a></li>
+      <li><a href="/programme" class="transition-opacity duration-200 hover:opacity-70">Programme</a></li>
+      <li><a href="/artiste" class="transition-opacity duration-200 hover:opacity-70">Artistes</a></li>
+      <li><a href="/scene" class="transition-opacity duration-200 hover:opacity-70">Scènes</a></li>
+      <li><a href="/infos" class="transition-opacity duration-200 hover:opacity-70">Infos pratiques</a></li>
+      <li><a href="/contact" class="transition-opacity duration-200 hover:opacity-70">Contact</a></li>
+    </ul>
+
     <button
-      class="group relative z-40 flex h-6 w-6 flex-col items-center justify-center gap-1.5 md:hidden"
+      class="group relative z-40 flex h-6 w-6 flex-col items-center justify-center gap-1.5 md:hidden lg:hidden"
       id="menu-btn"
       aria-label="Menu"
       aria-controls="menu"
@@ -31,12 +41,11 @@ import MenuImage from "../assets/images/menu.webp";
     </button>
 
     <nav
-      class="fixed inset-0 z-20 bg-beige opacity-100 transition-all duration-300 ease-in-out aria-hidden:invisible aria-hidden:opacity-0"
+      class="fixed inset-0 z-20 bg-beige opacity-100 transition-all duration-300 ease-in-out aria-hidden:invisible aria-hidden:opacity-0 lg:hidden"
       id="menu"
       aria-hidden="true"
     >
       <div class="flex min-h-screen flex-col bg-beige px-6 pt-7 pb-0">
-
         <div class="flex justify-between">
           <a href="/" aria-label="Accueil" class="block">
             <Logo class="h-9 w-9" />
@@ -68,7 +77,6 @@ import MenuImage from "../assets/images/menu.webp";
         <p class="mt-5 max-w-sm text-base font-semibold leading-relaxed">
           Entre ciel et terre, vivez l’expérience Flying Tap Fest.
         </p>
-
       </div>
     </nav>
   </div>

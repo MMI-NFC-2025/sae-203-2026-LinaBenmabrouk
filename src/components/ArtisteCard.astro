@@ -27,8 +27,8 @@ const jour = jourNumero && moisLabel ? `${jourNumero} ${moisLabel}` : "";
 const lieuNom = artiste.expand?.lieu?.at(0)?.nom || "";
 ---
 
-<div class="flex justify-center px-5">
-  <div class="relative h-96 w-80 overflow-hidden rounded-3xl">
+<div class="flex justify-center px-5 lg:px-0">
+  <div class="relative h-96 w-80 overflow-hidden rounded-3xl lg:h-96 lg:w-full lg:max-w-none">
     <PbImage
       record={artiste}
       imageField={artiste.photo}
@@ -37,17 +37,17 @@ const lieuNom = artiste.expand?.lieu?.at(0)?.nom || "";
 
     <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-transparent"></div>
 
-    <div class="absolute inset-x-0 top-4 px-8 text-center text-white">
+    <div class="absolute inset-x-0 top-4 px-8 text-center text-white lg:top-6 lg:px-6">
       <p class="text-base font-bold">
         {heure} - {jour} – {lieuNom}
       </p>
 
-      <h3 class="mt-2 text-xl font-bold leading-tight">
+      <h3 class="mt-2 text-xl font-bold leading-tight lg:text-xl">
         {artiste.nom}
       </h3>
     </div>
 
-    <div class="absolute inset-x-0 bottom-4 flex justify-center">
+    <div class="absolute inset-x-0 bottom-4 flex justify-center lg:bottom-6">
       <a
         href={`/artiste/${artiste.id}`}
         class="inline-flex items-center justify-center rounded-lg bg-beige px-5 py-2 text-base font-bold uppercase text-orange"

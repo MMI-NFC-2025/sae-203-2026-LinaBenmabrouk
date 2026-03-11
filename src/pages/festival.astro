@@ -11,9 +11,9 @@ const equipe = await getEquipe();
 ---
 
 <Layout title="Le festival">
-  <section class="pb-20 pt-16 text-center">
+  <section class="pb-20 pt-16 text-center lg:pb-28">
 
-    <div class="bg-orange pt-6">
+    <div class="bg-orange pt-6 lg:pt-10">
       <Image
         src={Vagues}
         alt=""
@@ -21,93 +21,81 @@ const equipe = await getEquipe();
       />
     </div>
 
-    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange">
+    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange lg:text-6xl">
       À propos
     </h1>
 
-    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold">
+    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold lg:mt-6">
       <a href="/">Accueil</a>
       <span class="text-orange">›</span>
       <span class="text-orange">Le festival</span>
     </div>
 
-    <div class="mt-5 flex justify-center">
+    <div class="mt-5 flex justify-center lg:mt-8">
       <Image
         src={Logo}
         alt=""
-        class="h-52 w-auto"
+        class="h-52 w-auto lg:h-64"
       />
     </div>
 
-    <div class="mt-28 text-left">
-      <p class="px-15 text-xl leading-relaxed">
+    <div class="mt-28 text-left lg:mx-auto lg:mt-32 lg:max-w-6xl lg:px-10">
+      <p class="px-15 text-xl leading-relaxed lg:px-0 lg:max-w-4xl">
         Le Flying Tap Fest est un festival unique qui mêle la danse, la lumière et l’innovation.
         Entre ciel et terre, il réunit claquettes, musique et spectacles de drones pour offrir
         une expérience artistique moderne et immersive.
       </p>
     </div>
 
-    <div class="mt-15 px-5 text-left">
-      <h2 class="text-3xl font-bold uppercase text-orange">
+    <div class="mt-15 px-5 text-left lg:mx-auto lg:mt-24 lg:max-w-6xl lg:px-10">
+      <h2 class="text-3xl font-bold uppercase text-orange lg:text-3xl">
         Notre histoire
       </h2>
 
-      <p class="mt-4 pr-20 text-base leading-relaxed">
+      <p class="mt-4 pr-20 text-base leading-relaxed lg:pr-0 lg:max-w-2xl">
         En deux jours, vivez un festival mêlant claquettes, musique, ateliers et spectacles de drones lumineux.
       </p>
 
-      <div class="relative mt-16">
-        <div class="absolute right-0 top-0 h-full w-px bg-orange"></div>
+      <div class="relative mt-16 lg:mt-20 lg:mx-auto lg:max-w-4xl">
+        <div class="absolute right-0 top-0 h-full w-px bg-orange lg:left-1/2 lg:right-auto lg:-translate-x-1/2"></div>
 
-        <div class="pr-20">
-          <h3 class="text-2xl font-bold text-orange">2024</h3>
-          <p class="mt-3 text-xl leading-relaxed">
+        <div class="pr-20 lg:w-1/2 lg:pr-16">
+          <h3 class="text-2xl font-bold text-orange lg:text-2xl">2024</h3>
+          <p class="mt-3 text-xl leading-relaxed lg:text-lg">
             Création du concept : associer claquettes, musique live et spectacles de drones pour réinventer la scène.
           </p>
         </div>
 
-        <div class="my-5 flex justify-center">
-          <Image
-            src={Drone}
-            alt=""
-            class="h-4 w-auto"
-          />
+        <div class="my-5 flex justify-center lg:my-8">
+          <Image src={Drone} alt="" class="h-4 w-auto lg:h-5"/>
         </div>
 
-        <div class="pr-20">
-          <h3 class="text-2xl font-bold text-orange">2025</h3>
-          <p class="mt-3 text-xl leading-relaxed">
+        <div class="pr-20 lg:ml-auto lg:w-1/2 lg:pr-0 lg:pl-16">
+          <h3 class="text-2xl font-bold text-orange lg:text-2xl">2025</h3>
+          <p class="mt-3 text-xl leading-relaxed lg:text-lg">
             Organisation d’un événement-test réunissant danseurs, techniciens lumière et pilotes de drones.
           </p>
         </div>
 
-        <div class="my-5 flex justify-center">
-          <Image
-            src={Drone}
-            alt=""
-            class="h-4 w-auto"
-          />
+        <div class="my-5 flex justify-center lg:my-8">
+          <Image src={Drone} alt="" class="h-4 w-auto lg:h-5"/>
         </div>
 
-        <div class="pr-20">
-          <h3 class="text-2xl font-bold text-orange">2026</h3>
-          <p class="mt-3 text-xl leading-relaxed">
+        <div class="pr-20 lg:w-1/2 lg:pr-16">
+          <h3 class="text-2xl font-bold text-orange lg:text-2xl">2026</h3>
+          <p class="mt-3 text-xl leading-relaxed lg:text-lg">
             Lancement de la première édition officielle au Parc du Près-la-Rose, avec ateliers,
             performances et shows lumineux.
           </p>
         </div>
 
-        <div class="my-5 flex justify-center">
-          <Image
-            src={Drone}
-            alt=""
-            class="h-4 w-auto"
-          />
+        <div class="my-5 flex justify-center lg:my-8">
+          <Image src={Drone} alt="" class="h-4 w-auto lg:h-5"/>
         </div>
 
-        <div class="pr-20">
-          <h3 class="text-2xl font-bold text-orange">2027</h3>
-          <p class="mt-3 text-xl leading-relaxed">
+        <div class="pr-20 lg:ml-auto lg:w-1/2 lg:pr-0 lg:pl-16">
+          <h3 class="text-2xl font-bold text-orange lg:text-2xl">2027</h3>
+          <p class="mt-3 text-xl leading-relaxed lg:text-lg">
             Développement de nouvelles scènes et collaborations artistiques mêlant rythme,
             lumière et innovation.
           </p>
@@ -116,78 +104,80 @@ const equipe = await getEquipe();
       </div>
     </div>
 
-    <div class="mt-24 px-5 text-left">
-      <h2 class="text-3xl font-bold uppercase text-orange">
+    <div class="mt-24 px-5 text-left lg:mx-auto lg:max-w-6xl lg:px-10">
+      <h2 class="text-3xl font-bold uppercase text-orange lg:text-3xl">
         L’équipe
       </h2>
 
-      <p class="mt-4 pr-20 text-base leading-relaxed">
+      <p class="mt-4 pr-20 text-base leading-relaxed lg:pr-0 lg:max-w-3xl">
         Une équipe passionnée de danseurs, techniciens et créatifs dédiés à faire du Flying Tap Fest
         une expérience inoubliable.
       </p>
 
-      <div class="mt-10 space-y-6">
+      <div class="mt-10 space-y-6 lg:mt-14 lg:grid lg:grid-cols-2 lg:gap-8 lg:space-y-0">
         {equipe.map(member => (
           <EquipeCard member={member} />
         ))}
       </div>
     </div>
 
-    <div class="mt-24 px-5 text-left">
-      <h2 class="text-3xl font-bold uppercase text-orange">
+    <div class="mt-24 px-5 text-left lg:mx-auto lg:max-w-6xl lg:px-10">
+      <h2 class="text-3xl font-bold uppercase text-orange lg:text-3xl">
         Nos Valeurs
       </h2>
 
-      <p class="mt-4 text-xl leading-relaxed">
-        Le Flying Tap Fest défend une vision artistique fondée sur la rencontre entre tradition
-        et modernité. À travers les claquettes, la musique live et les performances visuelles,
-        le festival célèbre le mouvement, le rythme et l’innovation.
-      </p>
+      <div class="lg:mt-8 lg:grid lg:grid-cols-3 lg:gap-10">
+        <p class="mt-4 text-xl leading-relaxed lg:mt-0 lg:text-lg">
+          Le Flying Tap Fest défend une vision artistique fondée sur la rencontre entre tradition
+          et modernité. À travers les claquettes, la musique live et les performances visuelles,
+          le festival célèbre le mouvement, le rythme et l’innovation.
+        </p>
 
-      <p class="mt-6 text-xl leading-relaxed">
-        Cette édition met en avant des valeurs de créativité, de partage, d’accessibilité et
-        d’expérimentation. Elle invite les publics à découvrir des formes artistiques hybrides,
-        où la danse dialogue avec la lumière, l’espace et les nouvelles technologies.
-      </p>
+        <p class="mt-6 text-xl leading-relaxed lg:mt-0 lg:text-lg">
+          Cette édition met en avant des valeurs de créativité, de partage, d’accessibilité et
+          d’expérimentation. Elle invite les publics à découvrir des formes artistiques hybrides,
+          où la danse dialogue avec la lumière, l’espace et les nouvelles technologies.
+        </p>
 
-      <p class="mt-6 text-xl leading-relaxed">
-        La thématique de l’édition s’articule autour de l’idée d’élévation : élever le geste,
-        transformer la scène et proposer une expérience sensible entre ciel et terre. Chaque
-        proposition artistique contribue à construire un univers immersif, poétique et contemporain.
-      </p>
+        <p class="mt-6 text-xl leading-relaxed lg:mt-0 lg:text-lg">
+          La thématique de l’édition s’articule autour de l’idée d’élévation : élever le geste,
+          transformer la scène et proposer une expérience sensible entre ciel et terre.
+        </p>
+      </div>
     </div>
 
-    <div class="mt-10 mx-auto max-w-5xl px-6 py-12 text-center text-white bg-orange">
-      <h3 class="text-4xl font-bold uppercase tracking-wide">
-        Édition 2026 : L’élévation
-      </h3>
+    <div class="mt-10 bg-orange text-white lg:mt-20">
+  <div class="mx-auto max-w-5xl px-6 py-12 text-center lg:max-w-6xl lg:px-12 lg:py-16">
+    
+    <h3 class="text-4xl font-bold uppercase tracking-wide lg:text-4xl">
+      Édition 2026 : L’élévation
+    </h3>
 
-      <p class="mt-4 text-base leading-relaxed">
-        Pour cette édition 2026, le Flying Tap Fest met à l’honneur l’élévation.
-        Pensée comme une rencontre entre le mouvement, la musique et la lumière, cette thématique célèbre
-        l’élan du corps, la puissance du rythme et la capacité de la scène à se transformer.
-        Pendant deux jours, artistes, danseurs, musiciens et créateurs visuels se réunissent pour proposer
-        une expérience immersive où les claquettes dialoguent avec les drones lumineux dans une mise en scène
-        contemporaine et sensible.
-      </p>
-    </div>
+    <p class="mt-4 text-base leading-relaxed lg:mx-auto lg:mt-6 lg:max-w-4xl">
+      Pour cette édition 2026, le Flying Tap Fest met à l’honneur l’élévation.
+      Pensée comme une rencontre entre le mouvement, la musique et la lumière,
+      cette thématique célèbre l’élan du corps et la puissance du rythme.
+    </p>
 
-    <div class="mt-12 text-center">
+  </div>
+</div>
+
+    <div class="mt-12 text-center lg:mt-20">
       <div class="flex justify-center">
-        <Image
-          src={Logo}
-          alt="Flying Tap Fest"
-          class="h-auto w-auto"
+        <Image 
+        src={Logo} 
+        alt="Flying Tap Fest" 
+        class="h-auto w-auto lg:h-56"
         />
       </div>
 
-      <p class="mt-6 px-8 text-3xl font-bold text-orange">
+      <p class="mt-6 px-8 text-3xl font-bold text-orange lg:mx-auto lg:max-w-3xl">
         Prêt à découvrir ce qui vous attend ?
       </p>
 
       <a
         href="/programme"
-        class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-lg font-bold uppercase text-white"
+        class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-lg font-bold uppercase text-white lg:mt-8 lg:px-10 lg:py-3"
       >
         Voir le programme
       </a>

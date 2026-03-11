@@ -9,103 +9,111 @@ import IconBus from "../assets/icons/bus.svg";
 ---
 
 <Layout title="Infos pratiques">
-  <section class="pb-20 pt-16 text-center">
+  <section class="pb-20 pt-16 text-center lg:pb-28">
 
-    <div class="bg-orange pt-6">
-      <Image src={Vagues} alt="" class="block w-full" />
+    <div class="bg-orange pt-6 lg:pt-10">
+      <Image 
+        src={Vagues}
+        alt=""
+        class="block w-full"
+      />
     </div>
 
-    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange">
+    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange lg:text-6xl lg:pb-2">
       Infos pratiques
     </h1>
 
-    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold">
+    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold lg:mt-6 lg:gap-4">
       <a href="/">Accueil</a>
       <span class="text-orange">›</span>
       <span class="text-orange">Infos pratiques</span>
     </div>
 
-    <div class="mt-5 flex justify-center">
-      <Image src={Logo} alt="" class="h-52 w-auto" />
+    <div class="mt-5 flex justify-center lg:mt-8">
+      <Image 
+        src={Logo}
+        alt=""
+        class="h-52 w-auto lg:h-64"
+      />
     </div>
 
-    <div class="text-center">
-      <p class="px-15 text-xl leading-relaxed">
+    <div class="text-center lg:mx-auto lg:max-w-4xl lg:px-10">
+      <p class="px-15 text-xl leading-relaxed lg:px-0 lg:text-2xl">
         Tout ce qu’il faut pour préparer votre visite.
       </p>
     </div>
 
-    <div class="mt-20 px-5">
-      <div class="flex flex-col items-center text-center">
-        <Image src={IconTicket} alt="" class="h-20 w-auto" />
+    <div class="mt-20 px-5 lg:mt-24 lg:px-10">
+      <div class="flex flex-col items-center text-center lg:mx-auto lg:max-w-3xl">
+        <Image src={IconTicket} alt="" class="h-20 w-auto lg:h-24" />
 
-        <h2 class="mt-4 text-3xl font-bold uppercase text-orange">
+        <h2 class="mt-4 text-3xl font-bold uppercase text-orange lg:text-4xl">
           Tarifs
         </h2>
 
-        <p class="mt-2 text-sm leading-relaxed">
+        <p class="mt-2 text-sm leading-relaxed lg:max-w-2xl lg:text-base">
           Choisissez la formule qui vous convient pour profiter du festival.
         </p>
       </div>
 
-      <div class="mt-10 flex flex-wrap justify-center gap-8">
+      <div class="mt-10 flex flex-wrap justify-center gap-8 lg:mt-14 lg:flex-nowrap lg:items-stretch lg:gap-10">
 
-        <div class="w-96 rounded-2xl border border-orange/20 bg-beige/40 p-8 text-center shadow-sm">
+        <div class="w-96 rounded-2xl border border-orange/20 bg-beige/40 p-8 text-center shadow-sm lg:flex lg:min-h-full lg:flex-1 lg:flex-col lg:rounded-3xl lg:p-10">
 
-          <h3 class="mt-2 text-2xl font-bold text-orange">
+          <h3 class="mt-2 text-2xl font-bold text-orange lg:text-3xl">
             Pass 1 jour
           </h3>
 
-          <p class="mt-4 text-left">
+          <p class="mt-4 text-left lg:text-base">
             Accès au festival pendant une journée complète avec
           </p>
 
-          <ul class="mx-auto mt-4 w-fit list-disc text-left text-sm leading-relaxed">
+          <ul class="mx-auto mt-4 w-fit list-disc text-left text-sm leading-relaxed lg:mt-5 lg:text-base">
             <li>Spectacles</li>
             <li>Performances de claquettes</li>
             <li>Musique live et show de drones lumineux</li>
           </ul>
 
-          <p class="mt-6 text-5xl font-bold text-black">
+          <p class="mt-6 text-5xl font-bold text-black lg:mt-8 lg:text-6xl">
             18€
           </p>
 
           <a
             href="#"
-            class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-sm font-bold uppercase text-white"
+            class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-sm font-bold uppercase text-white lg:mt-10 lg:self-center lg:px-10 lg:py-3"
           >
             Acheter
           </a>
 
         </div>
 
-        <div class="relative w-96 rounded-2xl border border-orange bg-beige/40 p-8 text-center shadow-sm">
+        <div class="relative w-96 rounded-2xl border border-orange bg-beige/40 p-8 text-center shadow-sm lg:flex lg:min-h-full lg:flex-1 lg:flex-col lg:rounded-3xl lg:p-10">
 
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-orange px-4 py-1 text-xs font-bold uppercase text-white">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-orange px-4 py-1 text-xs font-bold uppercase text-white lg:px-5">
             Le plus populaire
           </div>
 
-          <h3 class="mt-2 text-2xl font-bold text-orange">
+          <h3 class="mt-2 text-2xl font-bold text-orange lg:text-3xl">
             Pass 2 jours
           </h3>
 
-          <p class="mt-4 text-left">
+          <p class="mt-4 text-left lg:text-base">
             Accès complet aux deux jours du festival
           </p>
 
-          <ul class="mx-auto mt-4 w-fit list-disc text-left text-sm leading-relaxed">
+          <ul class="mx-auto mt-4 w-fit list-disc text-left text-sm leading-relaxed lg:mt-5 lg:text-base">
             <li>Tous les spectacles et performances</li>
             <li>Ateliers et concerts</li>
             <li>Show de drones lumineux</li>
           </ul>
 
-          <p class="mt-6 text-5xl font-bold text-black">
+          <p class="mt-6 text-5xl font-bold text-black lg:mt-8 lg:text-6xl">
             30€
           </p>
 
           <a
             href="#"
-            class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-sm font-bold uppercase text-white"
+            class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-sm font-bold uppercase text-white lg:mt-auto lg:self-center lg:px-10 lg:py-3"
           >
             Acheter
           </a>
@@ -115,41 +123,41 @@ import IconBus from "../assets/icons/bus.svg";
       </div>
     </div>
 
-    <div class="mt-20 px-5">
+    <div class="mt-20 px-5 lg:mt-24 lg:px-10">
 
-      <div class="flex flex-col items-center text-center">
-        <Image src={IconMaison} alt="" class="h-20 w-auto" />
+      <div class="flex flex-col items-center text-center lg:mx-auto lg:max-w-3xl">
+        <Image src={IconMaison} alt="" class="h-20 w-auto lg:h-24" />
 
-        <h2 class="mt-4 text-3xl font-bold uppercase text-orange">
+        <h2 class="mt-4 text-3xl font-bold uppercase text-orange lg:text-4xl">
           Hébergements
         </h2>
 
-        <p class="mt-2 text-sm leading-relaxed">
+        <p class="mt-2 text-sm leading-relaxed lg:max-w-2xl lg:text-base">
           Plusieurs options d’hébergement sont disponibles à proximité du parc.
         </p>
       </div>
 
-      <div class="mt-10 flex flex-wrap justify-center gap-8">
+      <div class="mt-10 flex flex-wrap justify-center gap-8 lg:mt-14 lg:flex-nowrap lg:items-stretch lg:gap-10">
 
-        <div class="w-96 rounded-2xl bg-orange p-8 text-center text-white shadow-sm">
+        <div class="w-96 rounded-2xl bg-orange p-8 text-center text-white shadow-sm lg:flex lg:min-h-full lg:flex-1 lg:flex-col lg:rounded-3xl lg:p-10">
 
-          <h3 class="text-xl font-bold uppercase">
+          <h3 class="text-xl font-bold uppercase lg:text-2xl">
             Camping municipal
           </h3>
 
-          <p class="mt-4 text-base leading-relaxed">
+          <p class="mt-4 text-base leading-relaxed lg:text-lg">
             À 10 minutes à pied du festival, idéal pour vivre l’expérience sur place.
           </p>
 
         </div>
 
-        <div class="w-96 rounded-2xl bg-orange p-8 text-center text-white shadow-sm">
+        <div class="w-96 rounded-2xl bg-orange p-8 text-center text-white shadow-sm lg:flex lg:min-h-full lg:flex-1 lg:flex-col lg:rounded-3xl lg:p-10">
 
-          <h3 class="text-xl font-bold uppercase">
+          <h3 class="text-xl font-bold uppercase lg:text-2xl">
             Hôtels partenaires
           </h3>
 
-          <p class="mt-4 text-base leading-relaxed">
+          <p class="mt-4 text-base leading-relaxed lg:text-lg">
             Du 2★ au 4★, avec offres spéciales festival sur présentation de votre billet.
           </p>
 
@@ -158,53 +166,53 @@ import IconBus from "../assets/icons/bus.svg";
       </div>
     </div>
 
-    <div class="mt-20 px-5">
+    <div class="mt-20 px-5 lg:mt-24 lg:px-10">
 
-      <div class="flex flex-col items-center text-center">
-        <Image src={IconBus} alt="" class="h-20 w-auto" />
+      <div class="flex flex-col items-center text-center lg:mx-auto lg:max-w-3xl">
+        <Image src={IconBus} alt="" class="h-20 w-auto lg:h-24" />
 
-        <h2 class="mt-4 text-3xl font-bold uppercase text-orange">
+        <h2 class="mt-4 text-3xl font-bold uppercase text-orange lg:text-4xl">
           Transport
         </h2>
 
-        <p class="mt-2 text-sm leading-relaxed">
+        <p class="mt-2 text-sm leading-relaxed lg:max-w-2xl lg:text-base">
           Plusieurs options de transport permettent de rejoindre facilement le festival.
         </p>
       </div>
 
-      <div class="mt-10 flex flex-wrap justify-center gap-8">
+      <div class="mt-10 flex flex-wrap justify-center gap-8 lg:mt-14 lg:flex-nowrap lg:items-stretch lg:gap-10">
 
-        <div class="w-96 rounded-2xl border border-orange/20 bg-beige/40 p-8 text-center shadow-sm">
+        <div class="w-96 rounded-2xl border border-orange/20 bg-beige/40 p-8 text-center shadow-sm lg:flex lg:min-h-full lg:flex-1 lg:flex-col lg:rounded-3xl lg:p-10">
 
-          <h3 class="text-xl font-bold uppercase">
+          <h3 class="text-xl font-bold uppercase lg:text-2xl">
             Train
           </h3>
 
-          <p class="mt-4 text-base leading-relaxed">
+          <p class="mt-4 text-base leading-relaxed lg:text-lg">
             Gare de Montbéliard à 15 minutes à pied du site du festival.
           </p>
 
         </div>
 
-        <div class="w-96 rounded-2xl border border-orange/20 bg-beige/40 p-8 text-center shadow-sm">
+        <div class="w-96 rounded-2xl border border-orange/20 bg-beige/40 p-8 text-center shadow-sm lg:flex lg:min-h-full lg:flex-1 lg:flex-col lg:rounded-3xl lg:p-10">
 
-          <h3 class="text-xl font-bold uppercase">
+          <h3 class="text-xl font-bold uppercase lg:text-2xl">
             Bus
           </h3>
 
-          <p class="mt-4 text-base leading-relaxed">
+          <p class="mt-4 text-base leading-relaxed lg:text-lg">
             Lignes 1 et 3, arrêt “Parc” à proximité immédiate de l’entrée.
           </p>
 
         </div>
 
-        <div class="w-96 rounded-2xl border border-orange/20 bg-beige/40 p-8 text-center shadow-sm">
+        <div class="w-96 rounded-2xl border border-orange/20 bg-beige/40 p-8 text-center shadow-sm lg:flex lg:min-h-full lg:flex-1 lg:flex-col lg:rounded-3xl lg:p-10">
 
-          <h3 class="text-xl font-bold uppercase">
+          <h3 class="text-xl font-bold uppercase lg:text-2xl">
             Voiture
           </h3>
 
-          <p class="mt-4 text-base leading-relaxed">
+          <p class="mt-4 text-base leading-relaxed lg:text-lg">
             Parking gratuit sur place, dans la limite des places disponibles.
           </p>
 
@@ -213,26 +221,26 @@ import IconBus from "../assets/icons/bus.svg";
       </div>
     </div>
 
-    <div class="mt-20 px-5">
+    <div class="mt-20 px-5 lg:mt-24 lg:px-10">
 
       <div class="flex flex-col items-center text-center">
-        <h2 class="mt-4 text-3xl font-bold uppercase text-orange">
+        <h2 class="mt-4 text-3xl font-bold uppercase text-orange lg:text-4xl">
           Faq
         </h2>
       </div>
 
-      <div id="faq" class="mx-auto mt-10 max-w-5xl px-5">
+      <div id="faq" class="mx-auto mt-10 max-w-5xl px-5 lg:mt-14 lg:max-w-6xl">
 
         <div class="border-b border-blue/20">
 
-          <button class="flex w-full items-center justify-between py-5 text-left" type="button" aria-expanded="false">
-            <span class="text-sm font-bold">
+          <button class="flex w-full items-center justify-between py-5 text-left lg:py-6" type="button" aria-expanded="false">
+            <span class="text-sm font-bold lg:text-base">
               Les ateliers sont-ils ouvert à tous ?
             </span>
-            <span class="faq-icon text-2xl font-bold text-orange">+</span>
+            <span class="faq-icon text-2xl font-bold text-orange lg:text-3xl">+</span>
           </button>
 
-          <div class="faq-content hidden pb-5 text-left text-base leading-relaxed">
+          <div class="faq-content hidden pb-5 text-left text-base leading-relaxed lg:pb-6 lg:text-lg">
             Oui, les ateliers sont ouverts à tous les festivaliers, dans la limite des places disponibles. Certains ateliers peuvent nécessiter une inscription sur place.
           </div>
 
@@ -240,14 +248,14 @@ import IconBus from "../assets/icons/bus.svg";
 
         <div class="border-b border-blue/20">
 
-          <button class="flex w-full items-center justify-between py-5 text-left" type="button" aria-expanded="false">
-            <span class="text-sm font-bold">
+          <button class="flex w-full items-center justify-between py-5 text-left lg:py-6" type="button" aria-expanded="false">
+            <span class="text-sm font-bold lg:text-base">
               Le spectacle de drones est-il inclus dans le billet ?
             </span>
-            <span class="faq-icon text-2xl font-bold text-orange">+</span>
+            <span class="faq-icon text-2xl font-bold text-orange lg:text-3xl">+</span>
           </button>
 
-          <div class="faq-content hidden pb-5 text-left text-base leading-relaxed">
+          <div class="faq-content hidden pb-5 text-left text-base leading-relaxed lg:pb-6 lg:text-lg">
             Oui, le spectacle de drones est inclus dans tous les pass du festival.
           </div>
 
@@ -255,14 +263,14 @@ import IconBus from "../assets/icons/bus.svg";
 
         <div class="border-b border-blue/20">
 
-          <button class="flex w-full items-center justify-between py-5 text-left" type="button" aria-expanded="false">
-            <span class="text-sm font-bold">
+          <button class="flex w-full items-center justify-between py-5 text-left lg:py-6" type="button" aria-expanded="false">
+            <span class="text-sm font-bold lg:text-base">
               Peut-on venir avec des enfants ?
             </span>
-            <span class="faq-icon text-2xl font-bold text-orange">+</span>
+            <span class="faq-icon text-2xl font-bold text-orange lg:text-3xl">+</span>
           </button>
 
-          <div class="faq-content hidden pb-5 text-left text-base leading-relaxed">
+          <div class="faq-content hidden pb-5 text-left text-base leading-relaxed lg:pb-6 lg:text-lg">
             Bien sûr, le festival est ouvert aux familles.
           </div>
 
@@ -270,28 +278,28 @@ import IconBus from "../assets/icons/bus.svg";
 
         <div class="border-b border-blue/20">
 
-          <button class="flex w-full items-center justify-between py-5 text-left" type="button" aria-expanded="false">
-            <span class="text-sm font-bold">
+          <button class="flex w-full items-center justify-between py-5 text-left lg:py-6" type="button" aria-expanded="false">
+            <span class="text-sm font-bold lg:text-base">
               Le festival est-il accessible PMR ?
             </span>
-            <span class="faq-icon text-2xl font-bold text-orange">+</span>
+            <span class="faq-icon text-2xl font-bold text-orange lg:text-3xl">+</span>
           </button>
 
-          <div class="faq-content hidden pb-5 text-left text-base leading-relaxed">
+          <div class="faq-content hidden pb-5 text-left text-base leading-relaxed lg:pb-6 lg:text-lg">
             Oui, le site dispose de zones dédiées et d’allées adaptées.
           </div>
         </div>
       </div>
 
-      <div class="mt-16 flex flex-col items-center text-center">
+      <div class="mt-16 flex flex-col items-center text-center lg:mt-20">
 
         <Image
           src={Logo}
           alt="Flying Tap Fest"
-          class="h-30 w-auto"
+          class="h-30 w-auto lg:h-40"
         />
 
-        <p class="mt-4 px-5 text-base leading-relaxed">
+        <p class="mt-4 px-5 text-base leading-relaxed lg:max-w-2xl lg:text-lg">
           Entre ciel et terre, vivez l’expérience Flying Tap Fest.
         </p>
       </div>

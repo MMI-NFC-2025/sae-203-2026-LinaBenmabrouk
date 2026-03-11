@@ -10,52 +10,57 @@ const scenes = await getAllScenesByName();
 ---
 
 <Layout title="Scènes">
-  <section class="pb-20 pt-16 text-center">
-    <div class="bg-orange pt-6">
+  <section class="pb-20 pt-16 text-center lg:pb-28">
+    <div class="bg-orange pt-6 lg:pt-10">
       <Image src={Vagues} alt="" class="block w-full" />
     </div>
 
-    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange">
+    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange lg:text-6xl lg:pb-2">
       Scènes
     </h1>
 
-    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold">
+    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold lg:mt-6 lg:gap-4">
       <a href="/">Accueil</a>
       <span class="text-orange">›</span>
       <span class="text-orange">Scènes</span>
     </div>
 
-    <div class="mt-5 flex justify-center">
-      <Image src={Logo} alt="" class="h-52 w-auto" />
+    <div class="mt-5 flex justify-center lg:mt-8">
+      <Image 
+        src={Logo}
+        alt=""
+        class="h-52 w-auto lg:h-64"
+      />
     </div>
 
-    <div class="text-center">
-      <p class="px-15 text-xl leading-relaxed">
+    <div class="text-center lg:mx-auto lg:max-w-4xl lg:px-10">
+      <p class="px-15 text-xl leading-relaxed lg:px-0 lg:text-2xl">
         Découvrez les différents espaces du Flying Tap Fest.
       </p>
     </div>
 
-    <div class="mt-20 space-y-12">
+    <div class="mt-20 space-y-12 lg:mx-auto lg:mt-24 lg:max-w-7xl lg:grid lg:grid-cols-3 lg:gap-10 lg:space-y-0 lg:px-10">
       {scenes.map(scene => (
         <SceneCard scene={scene} />
       ))}
     </div>
-    <div class="mt-12 text-center">
+
+    <div class="mt-12 text-center lg:mt-20 lg:px-10">
       <div class="flex justify-center">
         <Image
           src={Logo}
           alt="Flying Tap Fest"
-          class="h-auto w-auto"
+          class="h-auto w-auto lg:h-56"
         />
       </div>
 
-      <p class="mt-6 px-10 text-3xl font-bold uppercase text-orange">
+      <p class="mt-6 px-10 text-3xl font-bold uppercase text-orange lg:mx-auto lg:max-w-3xl lg:text-4xl">
         Prêt à découvrir ce qui vous attend ?
       </p>
 
       <a
         href="/artiste"
-        class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-lg font-bold uppercase text-white"
+        class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-lg font-bold uppercase text-white lg:mt-8 lg:px-10 lg:py-3"
       >
         Voir les artistes
       </a>

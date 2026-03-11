@@ -13,27 +13,35 @@ const artistes7Juin = artistes.filter((artiste) => artiste.date?.slice(8, 10) ==
 ---
 
 <Layout title="Artistes">
-  <section class="pb-20 pt-16 text-center">
-    <div class="bg-orange pt-6">
-      <Image src={Vagues} alt="" class="block w-full" />
+  <section class="pb-20 pt-16 text-center lg:pb-28">
+    <div class="bg-orange pt-6 lg:pt-10">
+      <Image 
+        src={Vagues}
+        alt=""
+        class="block w-full"
+      />
     </div>
 
-    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange">
+    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange lg:text-6xl lg:pb-2">
       Artistes
     </h1>
 
-    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold">
+    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold lg:mt-6 lg:gap-4">
       <a href="/">Accueil</a>
       <span class="text-orange">›</span>
       <span class="text-orange">Artistes</span>
     </div>
 
-    <div class="mt-5 flex justify-center">
-      <Image src={Logo} alt="" class="h-52 w-auto" />
+    <div class="mt-5 flex justify-center lg:mt-8">
+      <Image 
+        src={Logo}
+        alt=""
+        class="h-52 w-auto lg:h-64"
+      />
     </div>
 
-    <div class="text-center">
-      <p class="px-15 text-xl leading-relaxed">
+    <div class="text-center lg:mx-auto lg:max-w-4xl lg:px-10">
+      <p class="px-15 text-xl leading-relaxed lg:px-0 lg:text-2xl">
         Découvrez les artistes qui rythmeront le Flying Tap Fest.
       </p>
     </div>
@@ -68,7 +76,7 @@ const artistes7Juin = artistes.filter((artiste) => artiste.date?.slice(8, 10) ==
     </div>
 
     <div id="section-tout" class="artist-section mt-16">
-      <div class="space-y-12">
+      <div class="space-y-12 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-10 lg:space-y-0 lg:px-10">
         {artistes.map((artiste) => (
           <ArtisteCard artiste={artiste} />
         ))}
@@ -76,7 +84,7 @@ const artistes7Juin = artistes.filter((artiste) => artiste.date?.slice(8, 10) ==
     </div>
 
     <div id="section-6juin" class="artist-section mt-16 hidden">
-      <div class="space-y-12">
+      <div class="space-y-12 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-10 lg:space-y-0 lg:px-10">
         {artistes6Juin.map((artiste) => (
           <ArtisteCard artiste={artiste} />
         ))}
@@ -84,29 +92,29 @@ const artistes7Juin = artistes.filter((artiste) => artiste.date?.slice(8, 10) ==
     </div>
 
     <div id="section-7juin" class="artist-section mt-16 hidden">
-      <div class="space-y-12">
+      <div class="space-y-12 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-10 lg:space-y-0 lg:px-10">
         {artistes7Juin.map((artiste) => (
           <ArtisteCard artiste={artiste} />
         ))}
       </div>
     </div>
 
-    <div class="mt-12 text-center">
+    <div class="mt-12 text-center lg:mt-20">
       <div class="flex justify-center">
         <Image
           src={Logo}
           alt="Flying Tap Fest"
-          class="h-auto w-auto"
+          class="h-auto w-auto lg:h-56"
         />
       </div>
 
-      <p class="mt-6 px-10 text-3xl font-bold uppercase text-orange">
+      <p class="mt-6 px-10 text-3xl font-bold uppercase text-orange lg:mx-auto lg:max-w-3xl">
         Tout ce qu'il faut savoir pour venir.
       </p>
 
       <a
         href="/infos"
-        class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-lg font-bold uppercase text-white"
+        class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-lg font-bold uppercase text-white lg:mt-8 lg:px-10 lg:py-3"
       >
         Voir les infos
       </a>

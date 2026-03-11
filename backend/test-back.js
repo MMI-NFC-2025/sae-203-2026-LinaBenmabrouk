@@ -103,7 +103,6 @@ try {
 } catch (e) {
     console.error(e);
 }
-*/
 
 try {
     const result = await getAllArtistesByDate();
@@ -111,3 +110,4 @@ try {
 } catch (e) {
     console.error(e);
 }
+*/

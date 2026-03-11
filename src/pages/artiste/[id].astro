@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import Logo from "../../assets/icons/logofooter-orange.svg";
 import Vagues from "../../assets/icons/vagues.svg";
+import ArrowLeft from "../../assets/icons/arrow_left.svg";
 import PbImage from "../../components/PbImage.astro";
 import { getArtisteById, getImageUrl } from "../../../backend/backend.mjs";
 
@@ -33,10 +34,10 @@ const moisLabel =
 const dateLabel = jourNumero && moisLabel ? `${jourNumero} ${moisLabel}` : "";
 const lieuNom = artiste.expand?.lieu?.at(0)?.nom || "";
 
-const galerie = artiste.photos || [];
+const galerie = artiste.galerie || [];
 
 const galerieUrls = await Promise.all(
-  galerie.map(async (photo) => {
+  galerie.map(async (photo: string) => {
     const url = await getImageUrl(artiste, photo);
     return url;
   })
@@ -44,20 +45,33 @@ const galerieUrls = await Promise.all(
 ---
 
 <Layout title={artiste.nom}>
-  <section class="pb-20 pt-16 text-center">
-    <div class="bg-orange pt-6">
-      <Image
-        src={Vagues}
-        alt=""
-        class="block w-full"
-      />
+  <section class="pb-20 pt-16 text-center lg:pb-28">
+    <div class="bg-orange pt-6 lg:pt-10">
+      <Image src={Vagues} alt="" class="block w-full" />
     </div>
 
-    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange">
-      {artiste.nom}
-    </h1>
+    <div class="bg-beige px-5 py-2 lg:px-10">
+      <div class="mx-auto flex max-w-6xl items-center justify-center gap-3 lg:gap-6">
+        <button
+          type="button"
+          onclick="if (window.history.length > 1) { window.history.back(); } else { window.location.href = '/artiste'; }"
+          class="flex shrink-0 items-center justify-center rounded-full bg-orange p-2 lg:p-3"
+          aria-label="Retour"
+        >
+          <Image
+            src={ArrowLeft}
+            alt=""
+            class="h-4 w-4 lg:h-5 lg:w-5"
+          />
+        </button>
 
-    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold">
+        <h1 class="text-3xl font-bold text-orange lg:text-6xl lg:pb-2">
+          {artiste.nom}
+        </h1>
+      </div>
+    </div>
+
+    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold lg:mt-6 lg:gap-4">
       <a href="/">Accueil</a>
       <span class="text-orange">›</span>
       <a href="/artiste">Artistes</a>
@@ -65,74 +79,78 @@ const galerieUrls = await Promise.all(
       <span class="text-orange">{artiste.nom}</span>
     </div>
 
-    <div class="mt-5 flex justify-center">
+    <div class="mt-5 flex justify-center lg:mt-8">
       <Image
         src={Logo}
         alt=""
-        class="h-52 w-auto"
+        class="h-52 w-auto lg:h-64"
       />
     </div>
 
-    <div class="mt-10 px-5">
-      <div class="mx-auto max-w-3xl text-center">
-        <div class="mt-8 overflow-hidden rounded-3xl">
-          <PbImage
-            record={artiste}
-            imageField={artiste.photo}
-            class="h-auto w-full object-cover"
-          />
-        </div>
-        
-        <p class="mt-5 text-center">
-            {dateLabel} - {heure} - {lieuNom}
-        </p>
+    <div class="mt-10 px-5 lg:px-10">
+      <div class="mx-auto max-w-3xl text-center lg:max-w-6xl lg:text-left">
+        <div class="lg:flex lg:items-start lg:gap-10">
+          <div class="mt-8 overflow-hidden rounded-3xl lg:mt-0 lg:w-1/2">
+            <PbImage
+              record={artiste}
+              imageField={artiste.photo}
+              class="h-auto w-full object-cover lg:h-96"
+            />
+          </div>
 
-        <p class="mt-8 text-base text-left leading-relaxed whitespace-pre-line">
-          {artiste.description}
-        </p>
+          <div class="lg:w-1/2">
+            <p class="mt-5 text-center lg:mt-0 lg:text-left lg:text-lg">
+              {dateLabel} - {heure} - {lieuNom}
+            </p>
+
+            <p class="mt-8 text-base text-left leading-relaxed whitespace-pre-line lg:mt-6 lg:text-lg">
+              {artiste.description}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="mt-20 px-5">
-      <h2 class="text-3xl font-bold uppercase text-orange">
+    <div class="mt-20 px-5 lg:px-10">
+      <h2 class="text-3xl font-bold uppercase text-orange lg:text-4xl">
         Galerie photo
       </h2>
 
-      <div class="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-2">
+      <div class="mx-auto mt-10 grid max-w-5xl gap-6 lg:max-w-7xl lg:grid-cols-3 lg:gap-8">
         {galerieUrls.length > 0 ? (
           galerieUrls.map((url) => (
             <div class="overflow-hidden rounded-3xl">
               <img
                 src={url}
                 alt={artiste.nom}
-                class="h-72 w-full object-cover"
+                class="h-72 w-full object-cover lg:h-80"
               />
             </div>
           ))
         ) : (
-          <p class="md:col-span-2 text-center text-xl text-blue">
+          <p class="text-center text-xl lg:col-span-3">
             Aucune photo complémentaire pour le moment.
           </p>
         )}
       </div>
     </div>
 
-    <div class="mt-12 text-center">
+    <div class="mt-12 text-center lg:mt-20 lg:px-10">
       <div class="flex justify-center">
         <Image
           src={Logo}
           alt="Flying Tap Fest"
-          class="h-auto w-auto"
+          class="h-auto w-auto lg:h-56"
         />
       </div>
 
-      <p class="mt-6 px-10 text-3xl font-bold uppercase text-orange">
+      <p class="mt-6 px-10 text-3xl font-bold uppercase text-orange lg:mx-auto lg:max-w-3xl lg:text-4xl">
         Tout ce qu'il faut savoir pour venir.
       </p>
 
       <a
         href="/infos"
-        class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-lg font-bold uppercase text-white"
+        class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-lg font-bold uppercase text-white lg:mt-8 lg:px-10 lg:py-3"
       >
         Voir les infos
       </a>

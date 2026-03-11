@@ -46,8 +46,8 @@ const scenes = [
 ---
 
 <Layout title="Programme">
-  <section class="pb-20 pt-16 text-center">
-    <div class="bg-orange pt-6">
+  <section class="pb-20 pt-16 text-center lg:pb-28">
+    <div class="bg-orange pt-6 lg:pt-10">
       <Image
         src={Vagues}
         alt=""
@@ -55,54 +55,66 @@ const scenes = [
       />
     </div>
 
-    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange">
+    <h1 class="-mt-px bg-beige text-3xl font-bold text-orange lg:text-6xl lg:pb-2">
       Programme
     </h1>
 
-    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold">
+    <div class="mt-5 flex items-center justify-center gap-3 text-sm font-bold lg:mt-6 lg:gap-4">
       <a href="/">Accueil</a>
       <span class="text-orange">›</span>
       <span class="text-orange">Programme</span>
     </div>
 
-    <div class="mt-5 flex justify-center">
+    <div class="mt-5 flex justify-center lg:mt-8">
       <Image
         src={Logo}
         alt=""
-        class="h-52 w-auto"
+        class="h-52 w-auto lg:h-64"
       />
     </div>
 
-    <div class="text-center">
-      <p class="px-15 text-xl leading-relaxed">
+    <div class="text-center lg:mx-auto lg:max-w-4xl lg:px-10">
+      <p class="px-15 text-xl leading-relaxed lg:px-0 lg:text-2xl">
         Découvrez les performances qui rythmeront le Flying Tap Fest.
       </p>
     </div>
 
-    <div class="mt-10 px-5">
-      <div class="mx-auto max-w-5xl rounded-lg border border-orange/20 bg-beige/40 p-6 shadow-sm">
-        <div class="flex flex-col gap-4 lg:flex-row lg:items-end">
-          <div class="w-full lg:flex-1">
-            <label for="search-programme" class="mb-2 block text-left text-sm font-bold uppercase text-orange">
-              Recherche
-            </label>
+    <div class="mt-10 px-5 lg:mt-14 lg:px-10">
+      <div class="mx-auto max-w-5xl rounded-2xl border border-orange/20 bg-beige/50 p-5 shadow-sm lg:max-w-6xl lg:rounded-3xl lg:border-orange/30 lg:bg-beige lg:p-10">
+        <div class="flex flex-col gap-4 lg:mb-8 lg:flex-row lg:items-start lg:justify-between">
+          <div class="text-left">
+            <p class="text-sm font-bold uppercase tracking-wide text-orange lg:text-sm">
+              Filtrer la programmation
+            </p>
 
-            <input
-              id="search-programme"
-              type="text"
-              placeholder="Rechercher un artiste"
-              class="w-full rounded-lg bg-orange px-4 py-3 text-sm text-beige placeholder-beige outline-none"
-            />
+            <p class="mt-2 text-sm leading-relaxed text-blue lg:text-base">
+              Affinez l’affichage par genre, horaire ou scène.
+            </p>
           </div>
 
-          <div class="w-full lg:w-52">
-            <label for="filter-genre" class="mb-2 block text-left text-sm font-bold uppercase text-orange">
+          <div class="w-full lg:w-auto">
+            <button
+              id="reset-filters"
+              type="button"
+              class="w-full rounded-xl bg-orange px-6 py-3 text-sm font-bold uppercase text-white lg:w-auto lg:px-8 lg:py-4"
+            >
+              Réinitialiser
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-5 flex flex-col gap-4 lg:mt-0 lg:grid lg:grid-cols-3 lg:gap-6">
+          <div class="w-full">
+            <label
+              for="filter-genre"
+              class="mb-2 block text-left text-xs font-bold uppercase tracking-wide text-orange lg:mb-3"
+            >
               Genre
             </label>
 
             <select
               id="filter-genre"
-              class="w-full rounded-lg bg-orange px-4 py-3 text-sm text-beige outline-none"
+              class="w-full rounded-xl bg-orange px-4 py-3 text-sm text-beige outline-none lg:px-5 lg:py-4 lg:text-base"
             >
               <option value="">Tous</option>
               {genres.map((genre) => (
@@ -111,14 +123,17 @@ const scenes = [
             </select>
           </div>
 
-          <div class="w-full lg:w-52">
-            <label for="filter-horaire" class="mb-2 block text-left text-sm font-bold uppercase text-orange">
+          <div class="w-full">
+            <label
+              for="filter-horaire"
+              class="mb-2 block text-left text-xs font-bold uppercase tracking-wide text-orange lg:mb-3"
+            >
               Horaire
             </label>
 
             <select
               id="filter-horaire"
-              class="w-full rounded-lg bg-orange px-4 py-3 text-sm text-beige outline-none"
+              class="w-full rounded-xl bg-orange px-4 py-3 text-sm text-beige outline-none lg:px-5 lg:py-4 lg:text-base"
             >
               <option value="">Tous</option>
               {horaires.map((horaire) => (
@@ -127,14 +142,17 @@ const scenes = [
             </select>
           </div>
 
-          <div class="w-full lg:w-52">
-            <label for="filter-scene" class="mb-2 block text-left text-sm font-bold uppercase text-orange">
+          <div class="w-full">
+            <label
+              for="filter-scene"
+              class="mb-2 block text-left text-xs font-bold uppercase tracking-wide text-orange lg:mb-3"
+            >
               Scène
             </label>
 
             <select
               id="filter-scene"
-              class="w-full rounded-lg bg-orange px-4 py-3 text-sm text-beige outline-none"
+              class="w-full rounded-xl bg-orange px-4 py-3 text-sm text-beige outline-none lg:px-5 lg:py-4 lg:text-base"
             >
               <option value="">Toutes</option>
               {scenes.map((scene) => (
@@ -146,7 +164,10 @@ const scenes = [
       </div>
     </div>
 
-    <div id="programme-list" class="mt-10 space-y-10">
+    <div
+      id="programme-list"
+      class="mt-10 space-y-10 lg:mx-auto lg:mt-16 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-10 lg:space-y-0 lg:px-10"
+    >
       {artistes.map((artiste) => {
         const scene = getLieuName(artiste);
         const genre = artiste.genre || "";
@@ -154,7 +175,7 @@ const scenes = [
 
         return (
           <div
-            class="programme-item"
+            class="programme-item lg:h-full lg:w-full"
             data-name={(artiste.nom || "").toLowerCase()}
             data-genre={genre.toLowerCase()}
             data-horaire={horaire}
@@ -166,23 +187,23 @@ const scenes = [
       })}
     </div>
 
-    <div class="mt-12 text-center">
+    <div class="mt-12 text-center lg:mt-20 lg:px-10">
       <div class="flex justify-center">
         <Image
           src={Logo}
           alt="Flying Tap Fest"
-          class="h-auto w-auto"
+          class="h-auto w-auto lg:h-56"
         />
       </div>
 
-      <p class="mt-6 px-10 text-3xl font-bold uppercase text-orange">
+      <p class="mt-6 px-10 text-3xl font-bold uppercase text-orange lg:mx-auto lg:max-w-3xl lg:text-4xl">
         Le programme complet ici !
       </p>
 
       <a
         href="/programme-flying-tap-fest-2026.pdf"
         download="programme-flying-tap-fest-2026.pdf"
-        class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-lg font-bold uppercase text-white"
+        class="mt-6 inline-flex items-center justify-center rounded-lg bg-orange px-8 py-2 text-lg font-bold uppercase text-white lg:mt-8 lg:px-10 lg:py-3"
       >
         Télécharger le programme
       </a>
@@ -192,38 +213,45 @@ const scenes = [
 
 <script is:inline>
   // @ts-nocheck
-  const searchInput = document.getElementById("search-programme");
   const genreSelect = document.getElementById("filter-genre");
   const horaireSelect = document.getElementById("filter-horaire");
   const sceneSelect = document.getElementById("filter-scene");
+  const resetBtn = document.getElementById("reset-filters");
   const items = document.querySelectorAll(".programme-item");
 
   function filterProgramme() {
-    const searchValue = (searchInput?.value || "").trim().toLowerCase();
     const genreValue = (genreSelect?.value || "").trim().toLowerCase();
     const horaireValue = (horaireSelect?.value || "").trim();
     const sceneValue = (sceneSelect?.value || "").trim().toLowerCase();
 
     items.forEach(function (item) {
-      const name = item.getAttribute("data-name") || "";
       const genre = item.getAttribute("data-genre") || "";
       const horaire = item.getAttribute("data-horaire") || "";
       const scene = item.getAttribute("data-scene") || "";
 
-      const matchSearch = !searchValue || name.includes(searchValue);
       const matchGenre = !genreValue || genre === genreValue;
       const matchHoraire = !horaireValue || horaire === horaireValue;
       const matchScene = !sceneValue || scene === sceneValue;
 
       item.style.display =
-        matchSearch && matchGenre && matchHoraire && matchScene
+        matchGenre && matchHoraire && matchScene
           ? ""
           : "none";
     });
   }
 
-  if (searchInput) searchInput.addEventListener("input", filterProgramme);
+  function resetFilters() {
+    if (genreSelect) genreSelect.value = "";
+    if (horaireSelect) horaireSelect.value = "";
+    if (sceneSelect) sceneSelect.value = "";
+
+    items.forEach(function (item) {
+      item.style.display = "";
+    });
+  }
+
   if (genreSelect) genreSelect.addEventListener("change", filterProgramme);
   if (horaireSelect) horaireSelect.addEventListener("change", filterProgramme);
   if (sceneSelect) sceneSelect.addEventListener("change", filterProgramme);
+  if (resetBtn) resetBtn.addEventListener("click", resetFilters);
 </script>
