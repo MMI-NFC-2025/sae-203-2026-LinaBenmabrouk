@@ -2,18 +2,23 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import { Image } from "astro:assets";
+
 import Vagues from "../assets/icons/vagues.svg";
 import Logo from "../assets/icons/logofooter-orange.svg";
 import IconProgramme from "../assets/icons/calendrier.svg";
 import IconArtiste from "../assets/icons/musique.svg";
 import IconInfo from "../assets/icons/ticket.svg";
+
 import Partenaire1 from "../assets/icons/partenaire1.svg";
+import Partenaire2 from "../assets/icons/partenaire2.svg";
+import Partenaire3 from "../assets/icons/partenaire3.svg";
+
 import ArrowLeft from "../assets/icons/arrow_left.svg";
 import ArrowRight from "../assets/icons/arrow_right.svg";
 ---
 
 <Layout>
-  <Hero></Hero>
+  <Hero />
 
   <section class="relative -mt-px">
     <Image
@@ -46,7 +51,7 @@ import ArrowRight from "../assets/icons/arrow_right.svg";
 
     <div class="px-14 pb-20 pt-10 lg:px-10 lg:pb-28 lg:pt-20">
       <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-16 lg:gap-y-20">
-        
+
         <div class="flex flex-col items-center text-center lg:px-8">
           <Image
             src={Logo}
@@ -54,17 +59,17 @@ import ArrowRight from "../assets/icons/arrow_right.svg";
             class="h-40 w-auto lg:h-30"
           />
 
-          <h3 class="mt-4 text-2xl uppercase font-bold text-orange lg:text-2xl">
+          <h3 class="mt-4 text-2xl uppercase font-bold text-orange">
             Le festival
           </h3>
 
-          <p class="px-12 text-sm leading-relaxed lg:px-0 lg:max-w-sm lg:text-sm">
+          <p class="px-12 text-sm leading-relaxed lg:px-0 lg:max-w-sm">
             Découvrez l’histoire et l’univers du festival.
           </p>
 
           <a
             href="/festival"
-            class="mt-5 inline-flex items-center justify-center rounded-sm bg-orange px-10 py-2 text-sm font-bold uppercase text-white lg:mt-6"
+            class="mt-5 inline-flex items-center justify-center rounded-sm bg-orange px-10 py-2 text-sm font-bold uppercase text-white"
           >
             À propos
           </a>
@@ -79,17 +84,17 @@ import ArrowRight from "../assets/icons/arrow_right.svg";
             class="h-20 w-auto lg:h-24"
           />
 
-          <h3 class="mt-4 text-2xl uppercase font-bold text-orange lg:text-2xl">
+          <h3 class="mt-4 text-2xl uppercase font-bold text-orange">
             Programme
           </h3>
 
-          <p class="px-12 text-sm leading-relaxed lg:px-0 lg:max-w-sm lg:text-sm">
+          <p class="px-12 text-sm leading-relaxed lg:px-0 lg:max-w-sm">
             Ateliers · Concerts · Shows lumineux.
           </p>
 
           <a
             href="/programme"
-            class="mt-5 inline-flex items-center justify-center rounded-sm bg-orange px-10 py-2 text-sm font-bold uppercase text-white lg:mt-6"
+            class="mt-5 inline-flex items-center justify-center rounded-sm bg-orange px-10 py-2 text-sm font-bold uppercase text-white"
           >
             Voir le programme
           </a>
@@ -104,17 +109,17 @@ import ArrowRight from "../assets/icons/arrow_right.svg";
             class="h-20 w-auto lg:h-24"
           />
 
-          <h3 class="mt-4 text-2xl uppercase font-bold text-orange lg:text-2xl">
+          <h3 class="mt-4 text-2xl uppercase font-bold text-orange">
             Artistes
           </h3>
 
-          <p class="px-12 text-sm leading-relaxed lg:px-0 lg:max-w-sm lg:text-sm">
+          <p class="px-12 text-sm leading-relaxed lg:px-0 lg:max-w-sm">
             Découvrez nos talents.
           </p>
 
           <a
             href="/artiste"
-            class="mt-5 inline-flex items-center justify-center rounded-sm bg-orange px-10 py-2 text-sm font-bold uppercase text-white lg:mt-6"
+            class="mt-5 inline-flex items-center justify-center rounded-sm bg-orange px-10 py-2 text-sm font-bold uppercase text-white"
           >
             Voir les artistes
           </a>
@@ -129,47 +134,57 @@ import ArrowRight from "../assets/icons/arrow_right.svg";
             class="h-20 w-auto lg:h-24"
           />
 
-          <h3 class="mt-4 text-2xl uppercase font-bold text-orange lg:text-2xl">
+          <h3 class="mt-4 text-2xl uppercase font-bold text-orange">
             Infos pratiques
           </h3>
 
-          <p class="px-12 text-sm leading-relaxed lg:px-0 lg:max-w-sm lg:text-sm">
+          <p class="px-12 text-sm leading-relaxed lg:px-0 lg:max-w-sm">
             Accès & infos.
           </p>
 
           <a
             href="/infos"
-            class="mt-5 inline-flex items-center justify-center rounded-sm bg-orange px-10 py-2 text-sm font-bold uppercase text-white lg:mt-6"
+            class="mt-5 inline-flex items-center justify-center rounded-sm bg-orange px-10 py-2 text-sm font-bold uppercase text-white"
           >
             En savoir plus
           </a>
         </div>
+
       </div>
 
       <div class="mt-18 -mx-8 border-t border-orange lg:mx-auto lg:mt-24 lg:max-w-6xl"></div>
 
-      <div class="px-8 pb-5 pt-15 text-center lg:mx-auto lg:max-w-6xl lg:px-0 lg:pb-0 lg:pt-20">
-        <h3 class="text-3xl font-bold uppercase text-orange lg:text-3xl">
+      <div class="px-8 pb-20 pt-15 text-center lg:mx-auto lg:max-w-6xl lg:px-0 lg:pb-28 lg:pt-20">
+
+        <h3 class="text-3xl font-bold uppercase text-orange">
           Nos partenaires
         </h3>
 
-        <p class="text-xl leading-relaxed lg:mt-3 lg:text-xl">
+        <p class="text-xl leading-relaxed lg:mt-3">
           Ils soutiennent le festival.
         </p>
 
-        <div class="mt-14 flex items-center justify-between lg:mx-auto lg:mt-16 lg:max-w-4xl">
+        <div
+          id="partners-carousel"
+          data-partner1={Partenaire1.src}
+          data-partner2={Partenaire2.src}
+          data-partner3={Partenaire3.src}
+          class="mt-14 flex items-center justify-between lg:mx-auto lg:mt-16 lg:max-w-4xl"
+        >
+
           <button
             id="partner-prev"
             class="lg:flex lg:h-14 lg:w-14 lg:items-center lg:justify-center"
             aria-label="Partenaire précédent"
+            type="button"
           >
             <Image src={ArrowLeft} alt="" class="h-10 w-auto lg:h-12" />
           </button>
 
           <div class="flex justify-center lg:flex-1">
-            <Image
+            <img
               id="partner-image"
-              src={Partenaire1}
+              src={Partenaire1.src}
               alt="Partenaire"
               class="transition-opacity duration-300 lg:max-h-32 lg:w-auto"
             />
@@ -179,11 +194,15 @@ import ArrowRight from "../assets/icons/arrow_right.svg";
             id="partner-next"
             class="lg:flex lg:h-14 lg:w-14 lg:items-center lg:justify-center"
             aria-label="Partenaire suivant"
+            type="button"
           >
             <Image src={ArrowRight} alt="" class="h-10 w-auto lg:h-12" />
           </button>
+
         </div>
+
       </div>
+
     </div>
   </section>
 </Layout>
