@@ -1,11 +1,10 @@
 ---
 const { member } = Astro.props;
-import PbImage from './PbImage.astro';
+import PbImage from "./PbImage.astro";
 ---
 
-<div class="flex flex-col items-center rounded-2xl border border-orange/20 bg-beige/40 p-6 text-center shadow-sm">
-
-  <div class="h-24 w-24 overflow-hidden rounded-full">
+<div class="flex items-center gap-4 lg:gap-6">
+  <div class="h-20 w-20 shrink-0 overflow-hidden rounded-full lg:h-24 lg:w-24">
     <PbImage
       record={member}
       imageField={member.photo}
@@ -13,16 +12,13 @@ import PbImage from './PbImage.astro';
     />
   </div>
 
-  <h3 class="mt-4 text-lg font-bold text-orange text-center">
-    {member.prenom} {member.nom}
-  </h3>
+  <div class="text-left">
+    <h3 class="text-base font-bold text-orange lg:text-lg">
+      {member.prenom} {member.nom}
+    </h3>
 
-  <p class="mt-1 text-sm uppercase text-blue text-center">
-    {member.role}
-  </p>
-
-  <p class="mt-3 max-w-xs text-sm leading-relaxed text-center">
-    {member.description}
-  </p>
-
+    <p class="mt-1 text-sm uppercase text-blue lg:text-base">
+      {member.role}
+    </p>
+  </div>
 </div>
